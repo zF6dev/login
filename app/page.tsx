@@ -23,6 +23,7 @@ export default function Home() {
   return <main className={zen_maru_gothic.className}>
     <div className="top-title">
       <h1>席予約システム v0.1</h1>
+      <h3>注意: このシステムは開発中です。<br></br>ログイン情報は一日に三回ほど削除いたします。</h3>
     </div>
     <div className="top-main-contents">
       <div className="top-news">
