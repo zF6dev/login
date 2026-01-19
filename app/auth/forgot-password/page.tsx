@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Page() {
     return (
-        <div className="min-h-svh w-full items-center justify-center p-6 md:p-10">
+        <div className="min-h-svh w-full flex flex-col items-center justify-center p-6 md:p-10">
             <Link
                 href="/"
                 className="inline-block text-sm underline-offset-4 hover:underline">
