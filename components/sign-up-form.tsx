@@ -103,6 +103,9 @@ export function SignUpForm({
           <CardHeader>
             <CardTitle className="text-2xl">新規登録</CardTitle>
             <CardDescription>アカウントを新規作成する</CardDescription>
+            <CardDescription>※ユーザー名は4文字以上30文字以下で入力してください。</CardDescription>
+            <CardDescription>※パスワードは6文字以上で入力してください。</CardDescription>
+            <CardDescription>※パスワードリセット機能は"まだ"ありません。</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSignUp}>
