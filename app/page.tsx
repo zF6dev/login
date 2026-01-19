@@ -1,4 +1,4 @@
-{/* import { EnvVarWarning } from "@/components/env-var-warning";
+import { EnvVarWarning } from "@/components/env-var-warning";
 import { AuthButton } from "@/components/auth-button";
 import { Hero } from "@/components/hero";
 import { ThemeSwitcher } from "@/components/theme-switcher";
@@ -34,9 +34,9 @@ export default function Home() {
         </Link>
       </div>
       <div className="top-login">
-            <AuthButton />
+            {/* <AuthButton /> */}
+            <h2>ちょっと待ってね</h2>
       </div>
     </div>
   </main>
 }
-*/}
