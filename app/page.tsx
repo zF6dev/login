@@ -22,7 +22,7 @@ const zen_maru_gothic = Zen_Maru_Gothic({
 export default function Home() {
   return <main className={zen_maru_gothic.className}>
     <div className="top-title">
-      <h1>席予約システム v0.1</h1>
+      <h1>席予約システム v0.2</h1>
       <h3>注意: このシステムは開発中です。<br></br>ログイン情報は一日に三回ほど削除いたします。</h3>
       <h3>そのため、前回新規登録していてもそのIDでログインできない可能性があります。</h3>
       <h3>その場合は、再度新規登録していただけるとありがたいです。</h3>
