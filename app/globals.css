@@ -66,3 +66,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+main {
+  text-align: center;
+  align-items: center;
+}

@@ -15,6 +15,22 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { DeployButton } from "@/components/deploy-button";
+import { EnvVarWarning } from "@/components/env-var-warning";
+import { AuthButton } from "@/components/auth-button";
+import { Hero } from "@/components/hero";
+import { ThemeSwitcher } from "@/components/theme-switcher";
+import { ConnectSupabaseSteps } from "@/components/tutorial/connect-supabase-steps";
+import { SignUpUserSteps } from "@/components/tutorial/sign-up-user-steps";
+import { hasEnvVars } from "@/lib/utils";
+import { Suspense } from "react";
+import Image from "next/image";
+import { Zen_Maru_Gothic } from "next/font/google"
+
+const zen_maru_gothic = Zen_Maru_Gothic({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export function SignUpForm({
   className,
@@ -57,64 +73,70 @@ export function SignUpForm({
   };
 
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-2xl">Sign up</CardTitle>
-          <CardDescription>Create a new account</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSignUp}>
-            <div className="flex flex-col gap-6">
-              <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="m@example.com"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
+    <div className={zen_maru_gothic.className}>
+      <div className={cn("flex flex-col gap-6", className)} {...props}>
+        <Link
+          href="/"
+          className="inline-block text-sm underline-offset-4 hover:underline">
+          ← トップページに戻る
+        </Link>
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">新規登録</CardTitle>
+            <CardDescription>アカウントを新規作成する</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSignUp}>
+              <div className="flex flex-col gap-6">
+                <div className="grid gap-2">
+                  <Label htmlFor="email">メールアドレス</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </div>
-                <Input
-                  id="password"
-                  type="password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-              <div className="grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="repeat-password">Repeat Password</Label>
+                <div className="grid gap-2">
+                  <div className="flex items-center">
+                    <Label htmlFor="password">パスワード</Label>
+                  </div>
+                  <Input
+                    id="password"
+                    type="password"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                 </div>
-                <Input
-                  id="repeat-password"
-                  type="password"
-                  required
-                  value={repeatPassword}
-                  onChange={(e) => setRepeatPassword(e.target.value)}
-                />
+                <div className="grid gap-2">
+                  <div className="flex items-center">
+                    <Label htmlFor="repeat-password">パスワードの再入力</Label>
+                  </div>
+                  <Input
+                    id="repeat-password"
+                    type="password"
+                    required
+                    value={repeatPassword}
+                    onChange={(e) => setRepeatPassword(e.target.value)}
+                  />
+                </div>
+                {error && <p className="text-sm text-red-500">{error}</p>}
+                <Button type="submit" className="w-full" disabled={isLoading}>
+                  {isLoading ? "Creating an account..." : "新規登録"}
+                </Button>
               </div>
-              {error && <p className="text-sm text-red-500">{error}</p>}
-              <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Creating an account..." : "Sign up"}
-              </Button>
-            </div>
-            <div className="mt-4 text-center text-sm">
-              Already have an account?{" "}
-              <Link href="/auth/login" className="underline underline-offset-4">
-                Login
-              </Link>
-            </div>
-          </form>
-        </CardContent>
-      </Card>
+              <div className="mt-4 text-center text-sm">
+                すでにアカウントを持っていますか？{" "}
+                <Link href="/auth/login" className="underline underline-offset-4">
+                  ログイン
+                </Link>
+              </div>
+            </form>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

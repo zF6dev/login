@@ -14,6 +14,22 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useState } from "react";
+import { DeployButton } from "@/components/deploy-button";
+import { EnvVarWarning } from "@/components/env-var-warning";
+import { AuthButton } from "@/components/auth-button";
+import { Hero } from "@/components/hero";
+import { ThemeSwitcher } from "@/components/theme-switcher";
+import { ConnectSupabaseSteps } from "@/components/tutorial/connect-supabase-steps";
+import { SignUpUserSteps } from "@/components/tutorial/sign-up-user-steps";
+import { hasEnvVars } from "@/lib/utils";
+import { Suspense } from "react";
+import Image from "next/image";
+import { Zen_Maru_Gothic } from "next/font/google"
+
+const zen_maru_gothic = Zen_Maru_Gothic({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export function ForgotPasswordForm({
   className,
@@ -45,61 +61,66 @@ export function ForgotPasswordForm({
   };
 
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
-      {success ? (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl">Check Your Email</CardTitle>
-            <CardDescription>Password reset instructions sent</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              If you registered using your email and password, you will receive
-              a password reset email.
-            </p>
-          </CardContent>
-        </Card>
-      ) : (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl">Reset Your Password</CardTitle>
-            <CardDescription>
-              Type in your email and we&apos;ll send you a link to reset your
-              password
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleForgotPassword}>
-              <div className="flex flex-col gap-6">
-                <div className="grid gap-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="m@example.com"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
+    <div className={zen_maru_gothic.className}>
+      <div className={cn("flex flex-col gap-6", className)} {...props}>
+        <Link
+          href="/"
+          className="inline-block text-sm underline-offset-4 hover:underline">
+          ← トップページに戻る
+        </Link>
+        {success ? (
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl">Check Your Email</CardTitle>
+              <CardDescription>Password reset instructions sent</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                If you registered using your email and password, you will receive
+                a password reset email.
+              </p>
+            </CardContent>
+          </Card>
+        ) : (
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl">パスワードのリセット</CardTitle>
+              <CardDescription>
+                メールアドレスを入力してください。パスワードリセットリンクを送信します。
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleForgotPassword}>
+                <div className="flex flex-col gap-6">
+                  <div className="grid gap-2">
+                    <Label htmlFor="email">メールアドレス</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </div>
+                  {error && <p className="text-sm text-red-500">{error}</p>}
+                  <Button type="submit" className="w-full" disabled={isLoading}>
+                    {isLoading ? "Sending..." : "パスワードリセットメールを送信"}
+                  </Button>
                 </div>
-                {error && <p className="text-sm text-red-500">{error}</p>}
-                <Button type="submit" className="w-full" disabled={isLoading}>
-                  {isLoading ? "Sending..." : "Send reset email"}
-                </Button>
-              </div>
-              <div className="mt-4 text-center text-sm">
-                Already have an account?{" "}
-                <Link
-                  href="/auth/login"
-                  className="underline underline-offset-4"
-                >
-                  Login
-                </Link>
-              </div>
-            </form>
-          </CardContent>
-        </Card>
-      )}
+                <div className="mt-4 text-center text-sm">
+                  すでにアカウントを持っていますか？{" "}
+                  <Link
+                    href="/auth/login"
+                    className="underline underline-offset-4"
+                  >
+                    ログイン
+                  </Link>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
+        )}
+      </div>
     </div>
   );
 }
