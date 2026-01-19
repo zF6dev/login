@@ -66,6 +66,12 @@ export function SignUpForm({
       return;
     }
 
+    if (username.length > 30) {
+      setError("ユーザー名は30文字以下である必要があります。");
+      setIsLoading(false);
+      return;
+    }
+
     const email = `${username}@guest.9a.si`;
 
     try {
