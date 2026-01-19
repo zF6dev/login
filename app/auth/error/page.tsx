@@ -34,8 +34,8 @@ export default function Page({
         <div className="flex flex-col gap-6">
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">
-                Sorry, something went wrong.
+              <CardTitle className="text-lg">
+                うわっ！何か問題が発生しました！
               </CardTitle>
             </CardHeader>
             <CardContent>

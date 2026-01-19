@@ -1,4 +1,3 @@
-import { DeployButton } from "@/components/deploy-button";
 import { EnvVarWarning } from "@/components/env-var-warning";
 import { AuthButton } from "@/components/auth-button";
 import { Hero } from "@/components/hero";
@@ -23,7 +22,7 @@ const zen_maru_gothic = Zen_Maru_Gothic({
 export default function Home() {
   return <main className={zen_maru_gothic.className}>
     <div className="top-title">
-      <h1>席予約システム v0.1-Beta 2</h1>
+      <h1>席予約システム v0.1</h1>
     </div>
     <div className="top-main-contents">
       <div className="top-news">
@@ -35,10 +34,7 @@ export default function Home() {
         </Link>
       </div>
       <div className="top-login">
-          <button>
-            <h2>ログインする→</h2>
             <AuthButton />
-          </button>
       </div>
     </div>
   </main>

@@ -1,11 +1,16 @@
-import { ForgotPasswordForm } from "@/components/forgot-password-form";
+import Link from "next/link";
 
 export default function Page() {
-  return (
-    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
-      <div className="w-full max-w-sm">
-        <ForgotPasswordForm />
-      </div>
-    </div>
-  );
+    return (
+        <div className="min-h-svh w-full items-center justify-center p-6 md:p-10">
+            <Link
+                href="/"
+                className="inline-block text-sm underline-offset-4 hover:underline">
+                ← トップページへ戻る
+            </Link>
+            <div className="w-full max-w-sm">
+                <h1>お疲れ様です。パスワードリセットとかいう機能はありません。</h1>
+            </div>
+        </div>
+    );
 }
