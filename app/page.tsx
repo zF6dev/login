@@ -24,6 +24,7 @@ export default function Home() {
     <div className="top-title">
       <h1>席予約システム v0.1</h1>
       <h3>注意: このシステムは開発中です。<br></br>ログイン情報は一日に三回ほど削除いたします。</h3>
+      <h3>前回のデータ消去: 25/1/19/23:33</h3>
     </div>
     <div className="top-main-contents">
       <div className="top-news">
