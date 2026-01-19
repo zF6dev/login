@@ -49,7 +49,7 @@ export function SignUpForm({
     setError(null);
 
     if (password !== repeatPassword) {
-      setError("Passwords do not match");
+      setError("パスワードが一致しません。");
       setIsLoading(false);
       return;
     }
@@ -65,7 +65,7 @@ export function SignUpForm({
       if (error) throw error;
       router.push("/auth/sign-up-success");
     } catch (error: unknown) {
-      setError(error instanceof Error ? error.message : "An error occurred");
+      setError(error instanceof Error ? error.message : "エラーが発生しました。");
     } finally {
       setIsLoading(false);
     }
