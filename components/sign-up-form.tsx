@@ -35,7 +35,7 @@ export function SignUpForm({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<"div">) {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -53,6 +53,20 @@ export function SignUpForm({
       setIsLoading(false);
       return;
     }
+
+    if (username.includes("@")) {
+      setError("ユーザー名に「@」を含めることはできません。");
+      setIsLoading(false);
+      return;
+    }
+
+    if (username.length < 4) {
+      setError("ユーザー名は4文字以上である必要があります。");
+      setIsLoading(false);
+      return;
+    }
+
+    const email = `${username}@guest.9a.si`;
 
     try {
       const { error } = await supabase.auth.signUp({
@@ -88,13 +102,13 @@ export function SignUpForm({
             <form onSubmit={handleSignUp}>
               <div className="flex flex-col gap-6">
                 <div className="grid gap-2">
-                  <Label htmlFor="email">メールアドレス</Label>
+                  <Label htmlFor="username">ユーザー名</Label>
                   <Input
-                    id="email"
-                    type="email"
+                    id="username"
+                    type="text"
                     required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                   />
                 </div>
                 <div className="grid gap-2">

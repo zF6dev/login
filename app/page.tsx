@@ -34,8 +34,7 @@ export default function Home() {
         </Link>
       </div>
       <div className="top-login">
-            {/* <AuthButton /> */}
-            <h2>ちょっと待ってね</h2>
+            <AuthButton />
       </div>
     </div>
   </main>

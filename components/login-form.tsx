@@ -35,7 +35,7 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<"div">) {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -47,6 +47,13 @@ export function LoginForm({
     setIsLoading(true);
     setError(null);
 
+    if (username.includes("@")) {
+      setError("ユーザー名に「@」を含めることはできません。");
+      setIsLoading(false);
+      return;
+    }
+
+    const email = `${username}@guest.9a.si`;
     try {
       const { error } = await supabase.auth.signInWithPassword({
         email,
@@ -81,13 +88,13 @@ export function LoginForm({
             <form onSubmit={handleLogin}>
               <div className="flex flex-col gap-6">
                 <div className="grid gap-2">
-                  <Label htmlFor="email">メールアドレス</Label>
+                  <Label htmlFor="username">ユーザー名</Label>
                   <Input
-                    id="email"
-                    type="email"
+                    id="username"
+                    type="text"
                     required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                   />
                 </div>
                 <div className="grid gap-2">
