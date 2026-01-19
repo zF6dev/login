@@ -12,11 +12,6 @@ export default function Page() {
     <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
       <div className="w-full max-w-sm">
         <div className="flex flex-col gap-6">
-          <Link
-            href="/"
-            className="inline-block text-sm underline-offset-4 hover:underline">
-            ← トップページに戻る
-          </Link>
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl">
@@ -25,13 +20,13 @@ export default function Page() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">
-                ログイン画面に戻って、登録した情報でログインしてください。
+                トップページに戻ってください。特に何もないです！(((
               </p>
               <br></br>
               <Link
-                href="/auth/login"
+                href="/"
                 className="inline-block text-sm underline-offset-4 hover:underline">
-                ← ログイン画面に戻る
+                ← トップページに戻る
               </Link>
             </CardContent>
           </Card>
