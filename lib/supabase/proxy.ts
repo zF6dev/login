@@ -44,6 +44,9 @@ export async function updateSession(request: NextRequest) {
 
   // IMPORTANT: If you remove getClaims() and you use server-side rendering
   // with the Supabase client, your users may be randomly logged out.
+
+  // この部分のコメントアウトを外すとリダイレクトの条件分岐を削除して、ログアウト状態でも任意のページにアクセスできるようになる。
+  {/* 
   const { data } = await supabase.auth.getClaims();
   const user = data?.claims;
 
@@ -58,6 +61,7 @@ export async function updateSession(request: NextRequest) {
     url.pathname = "/auth/login";
     return NextResponse.redirect(url);
   }
+  */}
 
   // IMPORTANT: You *must* return the supabaseResponse object as it is.
   // If you're creating a new response object with NextResponse.next() make sure to:
@@ -66,7 +70,7 @@ export async function updateSession(request: NextRequest) {
   // 2. Copy over the cookies, like so:
   //    myNewResponse.cookies.setAll(supabaseResponse.cookies.getAll())
   // 3. Change the myNewResponse object to fit your needs, but avoid changing
-  //    the cookies!
+  //    the cookies! 
   // 4. Finally:
   //    return myNewResponse
   // If this is not done, you may be causing the browser and server to go out
