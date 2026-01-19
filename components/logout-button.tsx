@@ -13,5 +13,10 @@ export function LogoutButton() {
     router.push("/auth/login");
   };
 
-  return <Button onClick={logout}>Logout</Button>;
+
+  return (
+    <div className="logout-button">
+      <button onClick={logout}>Logout</button>
+    </div>
+  );
 }
