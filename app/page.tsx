@@ -35,12 +35,10 @@ export default function Home() {
         </Link>
       </div>
       <div className="top-login">
-        <Link href="/auth/login">
           <button>
             <h2>ログインする→</h2>
             <AuthButton />
           </button>
-        </Link>
       </div>
     </div>
   </main>
