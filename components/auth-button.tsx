@@ -19,12 +19,16 @@ export async function AuthButton() {
     </div>
   ) : (
     <div className="auth-button">
-      <button>
-        <Link href="/auth/login"><h2>ログイン</h2></Link>
-      </button>
-      <button>
-        <Link href="/auth/sign-up"><h2>新規登録</h2></Link>
-      </button>
+      <Link href="/auth/login">
+        <button>
+          <h2>ログイン</h2>
+        </button>
+      </Link>
+      <Link href="/auth/sign-up">
+        <button>
+          <h2>新規登録</h2>
+        </button>
+      </Link>
     </div>
   );
 }
