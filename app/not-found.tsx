@@ -1,7 +1,5 @@
-"use client";
-
 import { Zen_Maru_Gothic } from "next/font/google"
-import { useState, useEffect, JSX } from "react"
+import { JSX } from "react"
 
 const zen_maru_gothic = Zen_Maru_Gothic({
   weight: '400',
@@ -9,26 +7,31 @@ const zen_maru_gothic = Zen_Maru_Gothic({
 })
 
 export default function NotFound() {
-  const [selectedMain, setSelectedMain] = useState<JSX.Element | null>(null);
-
-  useEffect(() => {
-    const mains = [
-      <main key="english" className={zen_maru_gothic.className}>
-        <div className="flex flex-col items-center justify-center min-h-screen">
+  const strings: {
+    key: string,
+    contents: JSX.Element
+  }[] = [
+      {
+        key: "english",
+        contents: <>
           <h1 className="text-3xl">404</h1>
-          <br></br>
+          <br />
           <h2 className="text-xl">Page not found looooooooool</h2>
-        </div>
-      </main>,
-      <main key="japanese" className={zen_maru_gothic.className}>
-        <div className="flex flex-col items-center justify-center min-h-screen">
-          <h1 className="text-3xl">あらまぁ、サーバーが頭を掻いてるよ</h1>
-        </div>
-      </main>
+        </>
+      },
+      {
+        key: "japanese",
+        contents: <h1 className="text-3xl">あらまぁ、サーバーが頭を掻いてるよ</h1>
+      }
     ];
-    const randomIndex = Math.floor(Math.random() * mains.length);
-    setSelectedMain(mains[randomIndex]);
-  }, []);
 
-  return selectedMain;
+  const randomIndex = Math.floor(Math.random() * strings.length);
+
+  return (
+    <main key={strings[randomIndex].key} className={zen_maru_gothic.className}>
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        {strings[randomIndex].contents}
+      </div>
+    </main>
+  );
 }
