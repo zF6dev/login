@@ -3,6 +3,7 @@ import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import Link from "next/link";
 import { ThemeSwitcher } from "@/components/theme-switcher";
+import { LogoutButton } from "@/components/logout-button";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -31,15 +32,15 @@ export default function RootLayout({
           <header className="border-b border-slate-200">
             <div className="mx-auto max-w-5xl h-14 px-6 flex items-center justify-between">
               <Link href="/">Home</Link>
-              <Link
-                href="https://github.com/zF6dev/login"
-                target="_blank"
-                className="absolute right-10 text-slate-1000 hover:underline underline-offset-4"
-              >
-                GitHub →
-              </Link>
               <div className="ml-auto flex items-center gap-4">
                 <ThemeSwitcher />
+                <Link
+                  href="https://github.com/zF6dev/login"
+                  target="_blank"
+                  className="absolute right-10 text-slate-1000 hover:underline underline-offset-4"
+                >
+                  GitHub →
+                </Link>
               </div>
             </div>
           </header>
