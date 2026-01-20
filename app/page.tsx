@@ -27,7 +27,7 @@ export default function Home() {
       <h3>そのため、前回新規登録していてもそのIDでログインできない可能性があります。</h3>
       <h3>その場合は、再度新規登録していただけるとありがたいです。</h3>
       <h3>ご迷惑をおかけいたします。</h3>
-      <h3>前回のデータ消去: 25/1/19/23:33</h3>
+      <h3>前回のデータ消去: 2026/1/19/23:33</h3>
     </div>
     <div className="top-main-contents">
       <div className="top-news">
