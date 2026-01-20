@@ -1,0 +1,40 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px 80px;
+  width: 95%;
+  border-bottom: 0.5px solid;
+}
+
+.header-left {
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+.header-left:hover {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    transition: all 0.3s ease;
+}
+
+.header-right {
+    display: flex;
+    gap: 32px;
+}
+
+.header-themeswitcher {
+    border: 0.5px dashed;
+    border-radius: 8px;
+}
+
+.header-github {
+    margin: auto 0;
+}
+
+.header-github:hover {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    transition: all 0.3s ease;
+}

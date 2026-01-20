@@ -1,6 +1,7 @@
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
+import "./layout.css";
 import Link from "next/link";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { LogoutButton } from "@/components/logout-button";
@@ -29,6 +30,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          {/*
           <header className="border-b border-slate-200">
             <div className="mx-auto max-w-5xl h-14 px-6 flex items-center justify-between">
               <Link href="/">Home</Link>
@@ -41,6 +43,20 @@ export default function RootLayout({
                 >
                   GitHub →
                 </Link>
+              </div>
+            </div>
+          </header>
+          */}
+          <header className="layout-header">
+            <div className="header-left">
+              <Link href="/">Home</Link>
+            </div>
+            <div className="header-right">
+              <div className="header-themeswitcher">
+                <ThemeSwitcher />
+              </div>
+              <div className="header-github">
+                <Link href="https://github.com/zF6dev/login" target="_blank">GitHub →</Link>
               </div>
             </div>
           </header>
