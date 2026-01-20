@@ -29,6 +29,9 @@ export default function Home() {
       <h3>ご迷惑をおかけいたします。</h3>
       <h3>前回のデータ消去: 2026/1/20/15:16</h3>
     </div>
+    <div className="top-changelog">
+      <Link href="/changelog">更新履歴を見る</Link>
+    </div>
     <div className="top-main-contents">
       <div className="top-news">
         <Link href="https://9a.si/r" target="_blank">

@@ -46,12 +46,25 @@
 .top-main-contents button:hover h2,
 .top-main-contents button:hover h3 {
     text-decoration: underline;
-    text-underline-offset: 6px;
+    text-underline-offset: 8px;
 }
 
 .top-main-contents h3 {
     font-size: 1rem;
     margin-bottom: 10px;
+}
+
+.top-changelog {
+    margin: 20px 0;
+}
+
+.top-changelog a {
+    font-size: 24px;
+}
+
+.top-changelog a:hover {
+    text-decoration: underline;
+    text-underline-offset: 8px;
 }
 
 .top-news {
