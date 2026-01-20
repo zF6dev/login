@@ -6,6 +6,8 @@ header {
   padding: 10px 80px;
   width: 95%;
   border-bottom: 0.5px solid;
+  gap: 16px;
+  position: relative;
 }
 
 .header-left {
@@ -37,4 +39,17 @@ header {
     text-decoration: underline;
     text-underline-offset: 8px;
     transition: all 0.3s ease;
+}
+
+@media screen and (max-width:480px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .header-themeswitcher {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 5px;
+    }
 }

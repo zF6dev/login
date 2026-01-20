@@ -9,7 +9,7 @@ const zen_maru_gothic = Zen_Maru_Gothic({
 const Loading = () => {
     return (
         <div className={zen_maru_gothic.className + " flex items-center justify-center h-screen"}>
-            <p className="text-2xl">Loading...</p>
+            <p className="text-2xl absolute top-1/2 left-1/2">Loading...</p>
         </div>
     );
 }

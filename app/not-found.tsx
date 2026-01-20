@@ -1,4 +1,5 @@
 import { Zen_Maru_Gothic } from "next/font/google"
+import { headers } from "next/headers"
 import { JSX } from "react"
 
 const zen_maru_gothic = Zen_Maru_Gothic({
@@ -6,7 +7,10 @@ const zen_maru_gothic = Zen_Maru_Gothic({
   subsets: ['latin'],
 })
 
-export default function NotFound() {
+export default async function NotFound() {
+  const h = await headers();
+  const userAgent = h.get('user-agent');
+
   const strings: {
     key: string,
     contents: JSX.Element
@@ -29,7 +33,7 @@ export default function NotFound() {
 
   return (
     <main key={strings[randomIndex].key} className={zen_maru_gothic.className}>
-      <div className="flex flex-col items-center justify-center min-h-screen">
+      <div className="flex flex-col items-center justify-center min-h-screen absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         {strings[randomIndex].contents}
       </div>
     </main>

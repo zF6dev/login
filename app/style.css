@@ -6,6 +6,10 @@
     padding: 20px 0;
 }
 
+.top-title h3 {
+    line-height: 1.6;
+}
+
 .top-main-contents {
     padding: 20px 0;
 }
@@ -50,6 +54,28 @@
     margin-bottom: 10px;
 }
 
+.top-news {
+    margin: 0 5%;
+}
+
 .top-login {
     margin: 40px 0;
+}
+
+@media screen and (max-width:768px) {
+    .top-title {
+        margin: auto 5%;
+    }
+
+    .top-title h1 {
+        font-size: 2rem;
+    }
+
+    .top-title h3 {
+        font-size: 0.9rem;
+    }
+    .top-main-contents button {
+        padding: 30px 40px;
+        font-size: 1.2rem;
+    }
 }
