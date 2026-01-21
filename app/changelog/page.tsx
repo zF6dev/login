@@ -17,6 +17,10 @@ export default function Home() {
         </div>
         <div className="changelog-main-contents">
             <div className="changelog">
+                <h2>1/21 17:18</h2>
+                <p>パスワードの入力時にパスワードを表示する機能を追加</p>
+            </div>
+            <div className="changelog">
                 <h2>1/21 13:08</h2>
                 <p>メタデータを削除し、DiscordやTwitterでプレビューが表示されないようにした。</p>
             </div>
