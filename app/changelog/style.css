@@ -1,0 +1,37 @@
+.changelog-title {
+    margin: 32px auto;
+}
+
+.changelog-title h1 {
+    font-size: 28px;
+}
+
+.changelog-title a {
+    font-size: 20px;
+}
+
+.changelog-title a:hover {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+.changelog-title p {
+    font-size: 12px;
+    margin: 8px;
+}
+
+.changelog {
+    padding: 16px;
+}
+
+.changelog h2 {
+    font-size: 20px;
+    text-decoration: 0.5px underline dashed;
+    text-underline-offset: 4px;
+}
+
+.changelog p {
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 24px;
+}
