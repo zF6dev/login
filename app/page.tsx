@@ -37,7 +37,7 @@ export default function Home() {
         <Link href="https://9a.si/r" target="_blank">
           <button>
             <h2>お知らせを開く</h2>
-            <h3>学校説明会についての要項を確認できます。</h3>
+            <h3>学校説明会についての要項なんて確認できません(笑)</h3>
           </button>
         </Link>
       </div>
