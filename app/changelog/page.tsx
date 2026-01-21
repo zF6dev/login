@@ -17,6 +17,10 @@ export default function Home() {
         </div>
         <div className="changelog-main-contents">
             <div className="changelog">
+                <h2>1/21 13:08</h2>
+                <p>メタデータを削除し、DiscordやTwitterでプレビューが表示されないようにした。</p>
+            </div>
+            <div className="changelog">
                 <h2>1/21 12:56</h2>
                 <p>更新履歴ページのスタイルを一新し、見やすくした。</p>
             </div>
