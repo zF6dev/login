@@ -6,9 +6,24 @@ import Link from "next/link";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { LogoutButton } from "@/components/logout-button";
 
-const defaultUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
+export const metadata = {
+  title: '',
+  description: '',
+  openGraph: {
+    title: '',
+    description: '',
+    images: [],
+  },
+  twitter: {
+    card: 'summary',
+    images: [],
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
