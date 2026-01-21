@@ -14,15 +14,15 @@ export default function NotFound() {
   useEffect(() => {
     const mains = [
       <main key="english" className={zen_maru_gothic.className}>
-        <div className="flex flex-col items-center justify-center min-h-screen">
+        <div className="flex flex-col items-center min-h-screen pt-[30vh]">
           <h1 className="text-5xl">404</h1>
           <br></br>
           <h2 className="text-2xl">Page not found looooooooool</h2>
         </div>
       </main>,
       <main key="japanese" className={zen_maru_gothic.className}>
-        <div className="flex flex-col items-center justify-center min-h-screen">
-          <h1 className="text-5xl">あらまぁ、サーバーが頭を掻いてるよ</h1>
+        <div className="flex flex-col items-center min-h-screen pt-[30vh]">
+          <h1 className="text-2xl mx-[20px]">あらまぁ、サーバーが頭を掻いてるよ</h1>
         </div>
       </main>
     ];
