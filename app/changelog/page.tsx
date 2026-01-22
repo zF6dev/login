@@ -17,12 +17,16 @@ export default function Home() {
         </div>
         <div className="changelog-main-contents">
             <div className="changelog">
+                <h2>1/22 15:55</h2>
+                <p>ログアウトボタンの日本語化と、一部の文字の大きさの修正</p>
+            </div>
+            <div className="changelog">
                 <h2>1/21 17:18</h2>
                 <p>パスワードの入力時にパスワードを表示する機能を追加</p>
             </div>
             <div className="changelog">
                 <h2>1/21 13:08</h2>
-                <p>メタデータを削除し、DiscordやTwitterでプレビューが表示されないようにした。</p>
+                <p>メタデータを削除し、DiscordやTwitterでプレビューが表示されないようにした</p>
             </div>
             <div className="changelog">
                 <h2>1/21 12:56</h2>
@@ -30,7 +34,7 @@ export default function Home() {
             </div>
             <div className="changelog">
                 <h2>1/21 12:44</h2>
-                <p>not-found.tsxとloading.tsxの文章を少し上に持ってきて見やすくした。</p>
+                <p>not-found.tsxとloading.tsxの文章を少し上に持ってきて見やすくした</p>
             </div>
             <div className="changelog">
                 <h2>1/21 0:47</h2>
