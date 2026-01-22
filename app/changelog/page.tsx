@@ -17,6 +17,10 @@ export default function Home() {
         </div>
         <div className="changelog-main-contents">
             <div className="changelog">
+                <h2>1/22 16:14</h2>
+                <p>ログアウトボタンをホバーした時に下線が引かれないバグの修正</p>
+            </div>
+            <div className="changelog">
                 <h2>1/22 15:55</h2>
                 <p>ログアウトボタンの日本語化と、一部の文字の大きさの修正</p>
             </div>
