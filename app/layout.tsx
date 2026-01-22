@@ -7,8 +7,8 @@ import { ThemeSwitcher } from "@/components/theme-switcher";
 import { LogoutButton } from "@/components/logout-button";
 
 export const metadata = {
-  title: '',
-  description: '',
+  title: '席予約システム v0.2',
+  description: '81期の学校祭で外来者に公開されているシステムのベータ版です。学校説明会の席予約ができます。',
   openGraph: {
     title: '',
     description: '',

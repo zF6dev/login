@@ -17,6 +17,10 @@ export default function Home() {
         </div>
         <div className="changelog-main-contents">
             <div className="changelog">
+                <h2>1/22 16:22</h2>
+                <p>メタデータを更新</p>
+            </div>
+            <div className="changelog">
                 <h2>1/22 16:14</h2>
                 <p>ログアウトボタンをホバーした時に下線が引かれないバグの修正</p>
             </div>
